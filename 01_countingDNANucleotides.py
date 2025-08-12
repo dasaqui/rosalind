@@ -1,3 +1,5 @@
+from aux import *
+
 def count_dna_nucleotides(dna_sequence):
   """
   Counts the occurrences of each DNA nucleotide ('A', 'C', 'G', 'T') in the given DNA sequence.
@@ -14,6 +16,7 @@ def count_dna_nucleotides(dna_sequence):
       count[nucleotide] += 1
   return count
 
+
 def test():
   # Test sequence provided by Rosalind
   seq1 = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
@@ -27,8 +30,23 @@ def test():
 
   print("All tests passed!")
 
+
+def prepare_output(counts):
+  # Four integers (separated by spaces) counting the respective number of times
+  # that the symbols 'A', 'C', 'G', and 'T' occur in s
+
+  return " ".join(str(counts[nucleotide]) for nucleotide in ['A', 'C', 'G', 'T'])
+
+
 def main():
   test()
+
+  processing_pipeline(
+    "rosalind_dna.txt",
+    count_dna_nucleotides,
+    prepare_output
+  )
+
 
 if __name__ == "__main__":
   main()
