@@ -20,7 +20,7 @@ def read_sequence(expected_name):
   if files:
     _file = max(files, key=os.path.getctime)
   else:
-    return None
+    raise FileNotFoundError(f"No file named '{expected_name}' found in {folders}")
 
   # Read the contents of the file
   with open(_file, "r") as file:
