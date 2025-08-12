@@ -31,3 +31,20 @@ def write_sequence(sequence):
   # Use current folder to save
   with open("output.txt", "w") as file:
     file.write(sequence)
+
+
+def processing_pipeline(input_file, processing_function, formatting_function):
+  # Read the input sequence
+  sequence = read_sequence(input_file)
+
+  # Process the sequence
+  result = processing_function(sequence)
+
+  # Prepare the output
+  output = formatting_function(result)
+
+  # Print the output
+  print(output)
+
+  # Write the output
+  write_sequence(output)
