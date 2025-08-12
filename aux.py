@@ -22,6 +22,9 @@ def read_sequence(expected_name):
   else:
     raise FileNotFoundError(f"No file named '{expected_name}' found in {folders}")
 
+  # Print in yellow
+  print(f"\033[93mReading from: {_file}\033[0m")
+
   # Read the contents of the file
   with open(_file, "r") as file:
     return file.read().strip()
