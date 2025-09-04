@@ -14,7 +14,7 @@ def finding_a_spliced_motif(fasta_string):
     appearance of the subsequence; for example, ACG is a subsequence of
     AACCGGTT in 8 different ways.
 
-Given: Two DNA strings s and t (each of length at most 1 kbp) in FASTA format.
+  Given: Two DNA strings s and t (each of length at most 1 kbp) in FASTA format.
 
   Return: One collection of indices of s in which the symbols of t appear as a
   subsequence of s. If multiple solutions exist, you may return any one.
